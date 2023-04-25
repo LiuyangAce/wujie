@@ -3,11 +3,29 @@ import {createRouter, createWebHistory} from 'vue-router';
 const routes = [
   {
     path: '/',
-    name: 'home',
-    title: '首页',
-    component: () => import('@/views/home.vue'),
+    redirect: '/v3Child',
+    name: 'v3child',
+    component: () => import('@/views/v3Child.vue'),
     meta: {
-      layout: 'defalutLayout'
+      layout: 'viewLayout',
+      title: 'v3Child'
+    }
+  },
+  {
+    path: '/reactChild',
+    name: 'reactChild',
+    component: () => import('@/views/reactChild.vue'),
+    meta: {
+      layout: 'viewLayout',
+      title: 'reactChild'
+    }
+  },
+  {
+    path: '/wujieDemo',
+    name: 'wujieDemo',
+    component: () => import('@/views/HelloWorld.vue'),
+    meta: {
+      layout: 'viewLayout'
     }
   }
 ]
