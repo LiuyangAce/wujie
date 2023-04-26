@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { reactive, ref } from "vue";
 
 defineProps({
   msg: String,
@@ -7,34 +7,50 @@ defineProps({
 
 const v3ChildUrl = ref("http://127.0.0.1:5176/");
 const reactChildUrl = ref("http://127.0.0.1:5175/");
+
+// const props = {
+//   data: {
+//     name: 'liuyang',
+//     age: 12
+//   },
+//   methods: {
+//     handleLog() {
+//       console.log('这是传递给v3Child的方法');
+//     }
+//   }
+// }
+// 也可以传递响应式的数据
+const props = reactive({
+  data: {
+    name: 'liuyang',
+    age: 12
+  },
+  methods: {
+    handleLog() {
+      console.log('这是传递给v3Child的方法');
+    }
+  }
+})
 </script>
 
 <template>
-    <WujieVue
-      class="v3Class"
-
-      name="v3-child"
-      :url="v3ChildUrl"
-    ></WujieVue>
-    <WujieVue
-      class="reactClass"
-
-      name="react-child"
-      :url="reactChildUrl"
-    ></WujieVue>
+  <WujieVue class="v3Class" name="v3-child" :url="v3ChildUrl" :props="props"></WujieVue>
+  <WujieVue class="reactClass" name="react-child" :url="reactChildUrl"></WujieVue>
 </template>
 
 <style scoped>
 .read-the-docs {
   color: #888;
 }
+
 .v3Class {
   border: 5px solid black;
   /* width: 50%;
   height: 50%; */
 }
+
 .reactClass {
-  border: 5px solid black; 
+  border: 5px solid black;
   /* width: 50%;
   height: 50%; */
 }

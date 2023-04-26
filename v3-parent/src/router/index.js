@@ -2,8 +2,8 @@ import {createRouter, createWebHistory} from 'vue-router';
 
 const routes = [
   {
-    path: '/',
-    redirect: '/v3Child',
+    // path: '/',
+    // redirect: '/v3Child',
     name: 'v3child',
     component: () => import('@/views/v3Child.vue'),
     meta: {
@@ -21,7 +21,8 @@ const routes = [
     }
   },
   {
-    path: '/wujieDemo',
+    path: '/',
+    redirect: '/wujieDemo',
     name: 'wujieDemo',
     component: () => import('@/views/HelloWorld.vue'),
     meta: {

@@ -10,15 +10,16 @@ export default {
 </script>
 
 <script setup>
+import HelloWorld from './views/HelloWorld.vue';
 import { useRouter, useRoute } from 'vue-router';
 import { computed, ref } from 'vue';
 // 当前路由参数
 const route = useRoute()
-console.log("🚀 当前:", route)
+// console.log("🚀 当前:", route, route.name)
 
 // 全局
 const router = useRouter()  
-console.log('全局:', router);
+// console.log('全局:', router);
 
 
 const layout = computed(() => {
@@ -30,9 +31,10 @@ const menuList = ref([{},{}])
 </script>
 
 <template>
-  <component :is="layout" :menuList="menuList">
+  <!-- <component :is="layout" :menuList="menuList">
     <router-view />
-  </component>
+  </component> -->
+  <HelloWorld></HelloWorld>
 </template>
 
 <style scoped>

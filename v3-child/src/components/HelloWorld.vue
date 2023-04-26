@@ -4,6 +4,10 @@ import { ref } from 'vue'
 defineProps<{ msg: string }>()
 
 const count = ref(0)
+
+console.log('wujie:',window.$wujie?.props);
+
+
 </script>
 
 <template>
