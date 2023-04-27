@@ -1,12 +1,9 @@
 <template>
-  <div>v3Child</div>
-    <!-- <WujieVue
+    <WujieVue
       class="v3Class"
-      width="100%"
-      height="100%"
       name="v3-child"
       :url="v3ChildUrl"
-    ></WujieVue> -->
+    ></WujieVue>
 </template>
 
 <script setup>

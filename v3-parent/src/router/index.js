@@ -1,14 +1,14 @@
-import {createRouter, createWebHistory} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
+import layout from "../layout/index.vue";
+
 
 const routes = [
   {
-    // path: '/',
-    // redirect: '/v3Child',
-    name: 'v3child',
+    path: '/v3Child',
+    name: 'v3Child',
     component: () => import('@/views/v3Child.vue'),
     meta: {
-      layout: 'viewLayout',
-      title: 'v3Child'
+      layout: 'layout',
     }
   },
   {
@@ -16,19 +16,9 @@ const routes = [
     name: 'reactChild',
     component: () => import('@/views/reactChild.vue'),
     meta: {
-      layout: 'viewLayout',
-      title: 'reactChild'
+      layout: 'layout',
     }
   },
-  {
-    path: '/',
-    redirect: '/wujieDemo',
-    name: 'wujieDemo',
-    component: () => import('@/views/HelloWorld.vue'),
-    meta: {
-      layout: 'viewLayout'
-    }
-  }
 ]
 
 const router = createRouter({
