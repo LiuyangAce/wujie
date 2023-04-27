@@ -5,12 +5,23 @@ defineProps<{ msg: string }>()
 
 const count = ref(0)
 
-console.log('wujie:',window.$wujie?.props);
+console.log('wujie props传值:',window.$wujie?.props);
+
+const clickHandle = () => {
+  window.$wujie?.bus.$emit('onFn', 'onFn msg')
+}
+
+const emitFnHandle = (val) => {
+  console.log('in emitFnHandle...', val);
+}
+
+window.$wujie?.bus.$on('emitFn', emitFnHandle)
 
 
 </script>
 
 <template>
+  <button @click="clickHandle()">button</button>
   <h1>{{ msg }}</h1>
 
   <div class="card">

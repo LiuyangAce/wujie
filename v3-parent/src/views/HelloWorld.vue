@@ -1,5 +1,8 @@
 <script setup>
 import { reactive, ref } from "vue";
+import WujieVue from 'wujie-vue3';
+const { bus } = WujieVue
+
 
 defineProps({
   msg: String,
@@ -31,9 +34,24 @@ const props = reactive({
     }
   }
 })
+
+
+const onFnHandle = (val) => {
+  console.log('in onFnHandle....', val);
+}
+// eventbus 通信
+// bus.$on('onFn', onFnHandle)
+bus.$once('onFn', onFnHandle)
+
+
+const clickHandle = () => {
+  bus.$emit('emitFn', 'emitFn msg')
+}
+
 </script>
 
 <template>
+  <button @click="clickHandle()">button</button>
   <WujieVue class="v3Class" name="v3-child" :url="v3ChildUrl" :props="props"></WujieVue>
   <WujieVue class="reactClass" name="react-child" :url="reactChildUrl"></WujieVue>
 </template>

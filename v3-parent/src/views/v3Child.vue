@@ -16,7 +16,7 @@ const v3ChildUrl = ref("http://127.0.0.1:5176/");
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .v3Class {
   border: 5px solid black;
 }

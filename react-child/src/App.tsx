@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -6,6 +6,12 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
+  // useEffect(() => {
+  //   window.$wujie?.bus.$on('emitFn',(val: any) => {
+  //     console.log('in emitFnHandle React...', val);
+  //   })
+  // })
+  
   return (
     <>
       <div>
