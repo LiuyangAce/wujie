@@ -18,9 +18,14 @@ const emitFnHandle = (val) => {
 window.$wujie?.bus.$on('emitFn', emitFnHandle)
 
 
+const jumpToReactChild = () => {
+  window.$wujie?.props.jump("reactChild")
+}
+
 </script>
 
 <template>
+  <button @click="jumpToReactChild()">跳转到reactChild</button>
   <button @click="clickHandle()">button</button>
   <h1>{{ msg }}</h1>
 
