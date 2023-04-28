@@ -1,23 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import layout from "../layout/index.vue";
+
+const layoutComponent = () => import('@/layout/index.vue')
 
 
 const routes = [
   {
-    path: '/v3Child',
-    name: 'v3Child',
-    component: () => import('@/views/v3Child.vue'),
-    meta: {
-      layout: 'layout',
-    }
-  },
-  {
-    path: '/reactChild',
-    name: 'reactChild',
-    component: () => import('@/views/reactChild.vue'),
-    meta: {
-      layout: 'layout',
-    }
+    path: '/childList',
+    name: 'childList',
+    component: layoutComponent,
+    children: [
+      {
+        path: 'home',
+        name: 'home',
+        component: () => import('@/views/home.vue'),
+      },
+      {
+        path: 'v3Child',
+        name: 'v3Child',
+        component: () => import('@/views/v3Child.vue'),
+      },
+      {
+        path: 'reactChild',
+        name: 'reactChild',
+        component: () => import('@/views/reactChild.vue'),
+      },
+    ]
   },
 ]
 
