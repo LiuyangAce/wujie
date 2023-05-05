@@ -23,15 +23,9 @@ const router = useRouter();
 // console.log(router.options.routes);
 
 
-// const path = router.currentRoute.value.fullPath
-// const defaultActive = ref(path)
 
-let activePath = ref(route.path)
-console.log(activePath.value);
-
-
-// let activePath = ref(router.currentRoute.value.fullPath)
-// console.log(activePath.value);
+let activePath = route.path
+console.log(activePath);
 
 const sidebarRouteOld = router.options.routes.map(route => {
   if (Object.keys(route).includes('children')) {
