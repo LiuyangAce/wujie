@@ -6,15 +6,22 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-  // function handleClick() {
-  //   console.log('跳转到vue3-子 指定路由');
-  //   // window.$wujie?.props.jump("reactChild")
-  // }
-  
+  function handleClick() {
+    console.log('跳转到vue3-子 指定路由');
+    window.$wujie?.props.jump(
+      {
+        path: '/childList/v3Child',
+        query: {
+          'v3-child': '/1'
+        }
+      }
+    )
+  }
+
   return (
     <>
       <div>
-        {/* <button onClick={handleClick}>跳转到vue3-子 指定路由</button> */}
+        <button onClick={handleClick}>跳转到vue3-子 指定路由</button>
       </div>
       <div>
         <a href="https://vitejs.dev" target="_blank">
