@@ -14,6 +14,8 @@ import { useRouter, onBeforeRouteUpdate } from "vue-router";
 
 const reactChildUrl = ref("http://127.0.0.1:5175/");
 
+const router = useRouter()
+
 const jump = (location) => {
   router.push(location)
 }

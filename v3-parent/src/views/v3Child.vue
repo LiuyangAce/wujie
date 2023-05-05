@@ -27,6 +27,14 @@ onBeforeRouteUpdate((to, from, next) => {
   next()
 })
 
+// 子应用 B 监听并跳转
+// window.$wujie?.bus.$on("routeChange", a);
+// const a = (path) => {
+//   console.log('xxxxxxxxxxbbbbbbbbbb');
+//   router.push({ path })
+// }
+
+
 </script>
 
 <style scoped>
