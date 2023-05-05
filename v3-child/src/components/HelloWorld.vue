@@ -1,7 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-defineProps<{ msg: string }>()
+export interface Props {
+  msg?: string
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  msg: 'hello'
+})
 
 const count = ref(0)
 
@@ -19,7 +25,7 @@ window.$wujie?.bus.$on('emitFn', emitFnHandle)
 
 
 const jumpToReactChild = () => {
-  window.$wujie?.props.jump("reactChild")
+  window.$wujie?.props.jump({ path: '/childList/reactChild' })
 }
 
 </script>

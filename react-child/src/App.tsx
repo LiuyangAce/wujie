@@ -6,14 +6,16 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-  // useEffect(() => {
-  //   window.$wujie?.bus.$on('emitFn',(val: any) => {
-  //     console.log('in emitFnHandle React...', val);
-  //   })
-  // })
+  // function handleClick() {
+  //   console.log('跳转到vue3-子 指定路由');
+  //   // window.$wujie?.props.jump("reactChild")
+  // }
   
   return (
     <>
+      <div>
+        {/* <button onClick={handleClick}>跳转到vue3-子 指定路由</button> */}
+      </div>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
