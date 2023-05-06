@@ -1,10 +1,11 @@
 <template>
+    <el-button @click="handleSync">sync</el-button>
     <WujieVue
       class="v3Class"
       name="v3-child"
       :url="v3ChildUrl"
       :props="{ jump }"
-      :sync="true"
+      :sync="sync"
     ></WujieVue>
 </template>
 
@@ -12,7 +13,19 @@
 import { ref } from "vue";
 import { useRouter, onBeforeRouteUpdate } from "vue-router";
 
+import WujieVue from "wujie-vue3";
+const { setupApp,preloadApp } = WujieVue
+
 const v3ChildUrl = ref("http://127.0.0.1:5176/");
+
+setupApp({
+  name: "v3-child",
+  url: v3ChildUrl,
+  alive: true
+})
+preloadApp({
+  name: "v3-child",
+})
 
 const router = useRouter()
 
@@ -34,6 +47,11 @@ onBeforeRouteUpdate((to, from, next) => {
 //   router.push({ path })
 // }
 
+
+let sync = ref(false)
+const handleSync = () => {
+  sync = !sync
+}
 
 </script>
 

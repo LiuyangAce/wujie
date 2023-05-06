@@ -11,8 +11,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 const count = ref(0)
 
-console.log('wujie props传值:',window.$wujie?.props);
-
 const clickHandle = () => {
   window.$wujie?.bus.$emit('onFn', 'onFn msg')
 }

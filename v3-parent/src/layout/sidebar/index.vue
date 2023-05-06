@@ -14,24 +14,26 @@
 
 <script setup>
 import { useRouter, useRoute } from "vue-router";
-import { ref, computed, reactive, onMounted } from 'vue';
+import { ref, computed, reactive, onMounted, watch } from 'vue';
 
 
 const route = useRoute();
 const router = useRouter();
-// console.log(route);
-// console.log(router.options.routes);
 
 
-// const path = router.currentRoute.value.fullPath
-// const defaultActive = ref(path)
+let activePath = ref(null)
+watch(
+  () => route,
+  () => {
+    activePath.value = route.path
+  },
+  {
+    deep: true,
+    immediate: true
+  }
+)
 
-let activePath = ref(route.path)
-console.log(activePath.value);
 
-
-// let activePath = ref(router.currentRoute.value.fullPath)
-// console.log(activePath.value);
 
 const sidebarRouteOld = router.options.routes.map(route => {
   if (Object.keys(route).includes('children')) {

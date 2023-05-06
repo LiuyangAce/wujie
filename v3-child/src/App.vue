@@ -1,7 +1,24 @@
 <script setup lang="ts">
+import { useRouter, useRoute } from 'vue-router';
+
+  const router = useRouter()
+
+
+  const handleJump = (path: string)=> {
+    router.push({ path })
+  }
+
+  console.log(window);
+
+  // 子应用 B 监听并跳转
+  window.$wujie?.bus.$on("routeChange", handleJump);
+
+
+
 </script>
 
 <template>
+  <button @click="handleJump('/2')">werqew</button>
   <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />

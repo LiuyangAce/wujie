@@ -18,10 +18,16 @@ function App() {
     )
   }
 
+  function handleClickAlived() {
+    console.log(1111);
+    window.$wujie?.bus.$emit("routeChange", "/2");
+  }
+
   return (
     <>
       <div>
         <button onClick={handleClick}>跳转到vue3-子 指定路由</button>
+        <button onClick={handleClickAlived}>跳转到vue3-子 指定路由-/v2---v3已经实例化</button>
       </div>
       <div>
         <a href="https://vitejs.dev" target="_blank">
